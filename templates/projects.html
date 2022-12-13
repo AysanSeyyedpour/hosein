@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% block content %}
+
+{% comment %} {{message}} {% endcomment %}
+<p>Hello you are in the {{page}} page</p>
+
+
+{% if number > 10 %}
+<p>number is gratter than 10</p>
+
+{% elif number == 10 %}
+<p>number is exactly 10</p>
+
+{% else %}
+<p>number is less than 10</p>
+
+{% endif %}
+
+<ul>
+    {% for project in projects %}
+        <li>Title: <a href='/project/{{project.id}}'>{{ project.title }}</a>  ---  Description:{{project.description}}</li>
+    {% endfor %}
+</ul>
+
+
+<h1> projects template </h1>
+{% comment %} <p>{% lorem 4 p random %}</p> {% endcomment %}
+
+{% endblock content %}
